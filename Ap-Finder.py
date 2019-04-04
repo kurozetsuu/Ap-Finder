@@ -1,6 +1,16 @@
 import urllib.request
 import os
+from termcolor import colored
+W  = '\033[0m'  # white (default)
+R  = '\033[1;31m' # red
+G  = '\033[1;32m' # green bold
+O  = '\033[1;33m' # orange
+B  = '\033[1;34m' # blue
+P  = '\033[1;35m' # purple
+C  = '\033[1;36m' # cyan
+GR = '\033[1;37m' # gray
 os.system('clear')
+
 print('''
 	     --------------------------------------------------
 	     -                    Ap-Finder                   -
@@ -138,9 +148,10 @@ if choice == 1:
 		curl = website+i
 		try :
 			openurl = urllib.request.urlopen(curl)
-			print("Admin Panel Found =====> " + curl)
+			print(G+"[*] Admin Panel Found =====> " + curl)
 			break
 		except urllib.error.URLError as msg :
-			print("Admin Panel Not Found =====> " + curl)
+			print(R+"[!] Admin Panel Not Found =====> " + curl)
 elif choice == 2:
 	os.system("exit")
+
